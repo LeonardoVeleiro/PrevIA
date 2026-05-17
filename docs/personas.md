@@ -172,10 +172,3 @@ Fernanda utiliza o sistema para realizar configurações administrativas, cadast
 | Roberto Almeida | Gestor industrial | Consulta de relatórios, indicadores e histórico de conformidade |
 | Fernanda Lima | Administradora do sistema | Cadastro de usuários, configuração de câmeras e manutenção do sistema |
 
----
-
-## 7. Considerações Finais
-
-As personas apresentadas representam os principais perfis envolvidos no uso do PrevIA. Elas reforçam a necessidade de uma solução capaz de atender tanto o nível operacional quanto o nível tático e estratégico da indústria.
-
-Com base nessas personas, o sistema deve ser simples para os usuários finais, confiável para os supervisores e útil para a tomada de decisão dos gestores.
