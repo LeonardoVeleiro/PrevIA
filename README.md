@@ -1,6 +1,8 @@
 # PrevIA  
 ## Inteligência que antecipa riscos e protege vidas
 
+---
+
 ## Integrantes
 
 - Agatha Cassari Benedicto — RM 556251  
@@ -37,7 +39,7 @@ Dessa forma, existe a necessidade de uma solução capaz de identificar riscos e
 
 ## Proposta de Solução
 
-O PrevIA é um sistema inteligente de monitoramento industrial em tempo real que utiliza visão computacional e inteligência artificial para identificar situações de risco e verificar o uso correto de Equipamentos de Proteção Individual, os EPIs.
+O **PrevIA** é um sistema inteligente de monitoramento industrial em tempo real que utiliza visão computacional e inteligência artificial para identificar situações de risco e verificar o uso correto de Equipamentos de Proteção Individual, os EPIs.
 
 A solução propõe o uso de câmeras posicionadas no ambiente industrial para capturar imagens dos colaboradores em campo. Essas imagens são processadas por algoritmos de visão computacional capazes de detectar pessoas, identificar EPIs obrigatórios e reconhecer possíveis comportamentos de risco.
 
@@ -45,13 +47,13 @@ Quando uma situação irregular é identificada, o sistema emite alertas imediat
 
 ---
 
-## Objetivos do Projeto
-
-### Objetivo Geral
+## Objetivo Geral
 
 Desenvolver um sistema inteligente capaz de apoiar a segurança industrial proativa por meio do monitoramento em tempo real, identificação automática de riscos e emissão de alertas preventivos.
 
-### Objetivos Específicos
+---
+
+## Objetivos Específicos
 
 - Detectar colaboradores em ambiente industrial por meio de câmeras;
 - Verificar automaticamente o uso correto de EPIs;
@@ -66,12 +68,14 @@ Desenvolver um sistema inteligente capaz de apoiar a segurança industrial proat
 
 ## Público-Alvo
 
-O sistema PrevIA é voltado para ambientes industriais que necessitam de monitoramento contínuo de segurança. Os principais usuários da solução são:
+O sistema PrevIA é voltado para ambientes industriais que necessitam de monitoramento contínuo de segurança.
+
+Os principais usuários da solução são:
 
 - Operadores de chão de fábrica;
 - Supervisores de segurança do trabalho;
 - Gestores industriais;
-- Equipes responsáveis por prevenção de acidentes e conformidade operacional.
+- Administradores do sistema.
 
 ---
 
@@ -94,7 +98,7 @@ O funcionamento do PrevIA segue o seguinte fluxo:
 
 | Tecnologia | Finalidade |
 |-----------|------------|
-| Python | Linguagem principal para desenvolvimento da inteligência artificial e processamento de imagens |
+| Python | Linguagem principal para desenvolvimento da inteligência artificial, visão computacional e backend |
 | OpenCV | Captura, leitura e processamento de imagens e vídeos |
 | YOLO | Detecção de objetos em tempo real, como pessoas e EPIs |
 | MediaPipe Pose ou YOLO Pose | Análise de postura e comportamento de risco |
@@ -105,67 +109,55 @@ O funcionamento do PrevIA segue o seguinte fluxo:
 | GitHub | Versionamento, organização e documentação do projeto |
 | Draw.io ou PlantUML | Criação dos diagramas UML |
 
----
+A stack tecnológica apresentada representa uma proposta inicial da equipe e poderá ser ajustada ao longo do desenvolvimento, conforme testes, limitações técnicas e decisões futuras do projeto.
 
-## Justificativa Técnica das Tecnologias
+Mais detalhes estão disponíveis em:
 
-Python foi escolhido por ser uma linguagem amplamente utilizada em projetos de inteligência artificial, visão computacional e análise de dados. Sua grande quantidade de bibliotecas facilita o desenvolvimento de soluções inteligentes e permite uma prototipação mais rápida.
-
-OpenCV será utilizado para captura e processamento de imagens em tempo real, permitindo a integração com câmeras e o tratamento dos frames antes da análise pela inteligência artificial.
-
-YOLO foi selecionado por ser um modelo eficiente para detecção de objetos em tempo real. Ele é adequado para identificar colaboradores e EPIs, como capacetes, coletes, luvas e outros equipamentos de segurança.
-
-MediaPipe Pose ou YOLO Pose poderão ser utilizados para análise corporal e identificação de comportamentos de risco, como postura inadequada ou movimentação perigosa próxima a áreas restritas.
-
-FastAPI será utilizado no backend por ser um framework leve, rápido e compatível com Python, facilitando a comunicação entre o módulo de inteligência artificial, o banco de dados e o dashboard.
-
-PostgreSQL foi escolhido por ser um banco de dados relacional robusto, confiável e adequado para armazenar informações estruturadas, como usuários, ocorrências, alertas e relatórios.
-
-React.js será utilizado no desenvolvimento do dashboard, permitindo a criação de uma interface moderna e interativa para acompanhamento dos alertas e indicadores de segurança.
-
-WebSocket será utilizado para permitir comunicação em tempo real, garantindo que os alertas sejam enviados imediatamente ao painel do supervisor.
+[docs/tecnologias.md](docs/tecnologias.md)
 
 ---
 
-## Requisitos do Sistema
+## Documentação do Projeto
 
-A documentação completa dos requisitos funcionais e não funcionais está disponível no arquivo:
+A documentação completa da Sprint 1 está organizada na pasta `docs`.
 
-[docs/requisitos.md](docs/requisitos.md)
-
----
-
-## Personas
-
-As personas do projeto representam os principais usuários do sistema, como operador de chão de fábrica, supervisor de segurança e gestor industrial.
-
-A documentação completa está disponível em:
-
-[docs/personas.md](docs/personas.md)
-
----
-
-## Restrições do Sistema
-
-As limitações e restrições técnicas do projeto estão documentadas em:
-
-[docs/restricoes.md](docs/restricoes.md)
+| Documento | Descrição |
+|----------|-----------|
+| [Requisitos](docs/requisitos.md) | Requisitos funcionais, não funcionais, regras de negócio e atores do sistema |
+| [Tecnologias](docs/tecnologias.md) | Stack tecnológica e justificativa técnica |
+| [Personas](docs/personas.md) | Perfis dos usuários envolvidos no sistema |
+| [Restrições](docs/restricoes.md) | Limitações, premissas e restrições do projeto |
+| [Diagrama de Casos de Uso](docs/diagrama-casos-de-uso.md) | Descrição dos atores, casos de uso e relacionamentos include/extend |
+| [Diagrama de Atividades](docs/diagrama-atividades.md) | Fluxo de emissão de alerta preventivo |
+| [Diagrama de Classes](docs/diagrama-classes.md) | Estrutura de classes, atributos, métodos e relacionamentos |
 
 ---
 
 ## Diagramas UML
 
-Os diagramas UML do projeto serão armazenados na pasta `diagramas`.
+Os diagramas UML foram desenvolvidos para representar o funcionamento e a estrutura do sistema PrevIA.
 
-### Diagramas previstos
+### Diagrama de Casos de Uso
 
-- Diagrama de Casos de Uso;
-- Diagrama de Atividades;
-- Diagrama de Classes.
+Representa os principais atores do sistema, suas interações e os relacionamentos entre os casos de uso.
 
-Pasta dos diagramas:
+![Diagrama de Casos de Uso](diagramas/caso-de-uso.png)
 
-[diagramas](diagramas)
+---
+
+### Diagrama de Atividades
+
+Representa o fluxo principal de monitoramento, análise de risco e emissão de alerta preventivo.
+
+![Diagrama de Atividades](diagramas/atividades.png)
+
+---
+
+### Diagrama de Classes
+
+Representa as principais entidades do sistema, seus atributos, métodos e relacionamentos.
+
+![Diagrama de Classes](diagramas/classes.png)
 
 ---
 
@@ -181,7 +173,10 @@ PrevIA/
 │   ├── requisitos.md
 │   ├── tecnologias.md
 │   ├── personas.md
-│   └── restricoes.md
+│   ├── restricoes.md
+│   ├── diagrama-casos-de-uso.md
+│   ├── diagrama-atividades.md
+│   └── diagrama-classes.md
 │
 └── diagramas/
     ├── caso-de-uso.png
