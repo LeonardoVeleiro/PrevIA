@@ -161,14 +161,111 @@ Representa as principais entidades do sistema, seus atributos, métodos e relaci
 
 ---
 
+---
+
+## Sprint 2 — Protótipo Navegável
+
+Na Sprint 2, o projeto PrevIA evoluiu da modelagem inicial para um protótipo navegável desenvolvido no Figma.
+
+O objetivo desta etapa foi representar visualmente os principais fluxos do sistema, mantendo coerência com os requisitos, personas, casos de uso, diagrama de atividades e diagrama de classes definidos na Sprint 1.
+
+---
+
+## Objetivo do Protótipo
+
+O protótipo tem como objetivo simular a experiência de uso do sistema PrevIA, permitindo visualizar como supervisores, gestores e administradores interagem com a solução de segurança industrial proativa.
+
+O foco principal está na validação da navegação, organização das informações e clareza dos fluxos relacionados ao monitoramento de EPIs, emissão de alertas e geração de relatórios.
+
+---
+
+## Fluxos Representados
+
+O protótipo cobre os três fluxos principais solicitados na Sprint 2:
+
+1. Cadastro e consulta de EPI por colaborador;
+2. Emissão e visualização de alerta de risco;
+3. Geração de relatório de conformidade por setor.
+
+---
+
+## Telas Principais
+
+As principais telas desenvolvidas no protótipo são:
+
+* Login;
+* Dashboard de Monitoramento;
+* Monitoramento em Tempo Real;
+* Alertas e Notificações;
+* Histórico de Ocorrências;
+* Detalhe da Ocorrência;
+* Registro de Ação Preventiva;
+* Colaboradores;
+* Detalhe do Colaborador;
+* Edição de EPIs do Colaborador;
+* Gestão de EPIs;
+* Relatórios de Conformidade;
+* Relatório Detalhado;
+* Câmeras e Áreas Monitoradas.
+
+---
+
+## Instruções de Navegação do Protótipo
+
+Para testar o protótipo, recomenda-se seguir os fluxos abaixo.
+
+### Fluxo 1 — Cadastro e Consulta de EPI por Colaborador
+
+Login → Dashboard → Colaboradores → Carlos Henrique → Editar EPIs → Salvar alterações → Detalhe do Colaborador
+
+Esse fluxo demonstra a consulta dos EPIs obrigatórios de um colaborador e a simulação da edição dos EPIs vinculados.
+
+### Fluxo 2 — Emissão e Visualização de Alerta de Risco
+
+Dashboard → Monitoramento → Ver Alerta Preventivo → Detalhe da Ocorrência → Registrar Ação Preventiva → Salvar ação → Ocorrência Resolvida
+
+Esse fluxo representa a detecção de ausência de capacete, geração de alerta preventivo, registro de ocorrência e tomada de ação pela supervisora de segurança.
+
+### Fluxo 3 — Relatório de Conformidade por Setor
+
+Dashboard → Relatórios → Gerar Relatório → Relatório Detalhado
+
+Esse fluxo representa a geração de um relatório de conformidade por setor, com indicadores, ocorrências e recomendações preventivas.
+
+---
+
+## Link do Protótipo
+
+Link do protótipo no Figma:
+
+https://www.figma.com/make/WKn2i6gkAbUXN4ECFAkarC/Review-idea-from-text-file?code-node-id=0-9&p=f&t=5ivuy0KCbHPFA5Uy-0&fullscreen=1
+
+---
+
+## Documentação de Design
+
+A documentação de design da Sprint 2 está disponível em:
+
+`docs/documentacao-design.md`
+
+Esse documento apresenta o mapa de telas, decisões de UX/UI e o mapeamento entre as telas do protótipo e os casos de uso da Sprint 1.
+
+---
+
+## Observação sobre o Protótipo
+
+O protótipo desenvolvido na Sprint 2 não possui implementação em código, banco de dados ou processamento real de imagens. As interações representam a experiência esperada do usuário em uma versão funcional futura do sistema.
+
+A área de câmera e os botões de exportação ou salvamento são simulações visuais, utilizadas para demonstrar o fluxo navegável exigido nesta etapa.
+
+---
+
 ## Estrutura do Repositório
 
-```txt
+```text
 PrevIA/
-│
 ├── README.md
 ├── entrega.txt
-│
 ├── docs/
 │   ├── requisitos.md
 │   ├── tecnologias.md
@@ -176,9 +273,19 @@ PrevIA/
 │   ├── restricoes.md
 │   ├── diagrama-casos-de-uso.md
 │   ├── diagrama-atividades.md
-│   └── diagrama-classes.md
-│
+│   ├── diagrama-classes.md
+│   └── documentacao-design.md
 └── diagramas/
     ├── caso-de-uso.png
     ├── atividades.png
     └── classes.png
+```
+
+---
+
+## Status do Projeto
+
+Projeto em desenvolvimento acadêmico.
+
+A Sprint 1 contemplou a documentação, modelagem e definição inicial da solução.
+A Sprint 2 contemplou a criação do protótipo navegável e a documentação de design.
