@@ -1,251 +1,108 @@
-# Documentação de Design — Sprint 2
-
-## 1. Objetivo do Protótipo
-
-O objetivo desta documentação é apresentar as decisões de design, o mapa de telas e o relacionamento entre o protótipo navegável da Sprint 2 e a modelagem desenvolvida na Sprint 1 do projeto PrevIA.
-
-O PrevIA é uma solução de segurança industrial proativa que utiliza câmeras, visão computacional e inteligência artificial para detectar colaboradores, verificar o uso correto de EPIs, identificar situações de risco, emitir alertas preventivos, registrar ocorrências e gerar relatórios de conformidade.
-
-Na Sprint 2, o foco foi transformar os requisitos, personas, casos de uso, diagrama de atividades e diagrama de classes da Sprint 1 em uma interface navegável no Figma. O protótipo não possui implementação em código, mas simula a experiência principal do usuário dentro do sistema.
+# Documentação de Design — Sprint 3
+## Evolução do Protótipo e Refinamentos de UX/UI
 
 ---
 
-## 2. Mapa de Telas
+## 1. Objetivo do Documento e da Evolução
 
-O protótipo foi estruturado com as seguintes telas principais:
+Este documento apresenta a evolução do protótipo de alta fidelidade do **PrevIA** desenvolvido no Figma para a **Sprint 3**, detalhando as novas telas, fluxos secundários, refinamentos de usabilidade (UX) e o alinhamento com os requisitos consolidados nas Sprints anteriores.
 
-| Tela                        | Objetivo                                                                       |
-| --------------------------- | ------------------------------------------------------------------------------ |
-| Login                       | Permitir o acesso simulado ao sistema por diferentes perfis de usuário.        |
-| Dashboard de Monitoramento  | Exibir visão geral dos alertas, ocorrências, conformidade e áreas monitoradas. |
-| Monitoramento em Tempo Real | Simular a análise de câmera, detecção de colaborador e verificação de EPIs.    |
-| Alertas e Notificações      | Listar alertas identificados pelo sistema e destacar o fluxo principal.        |
-| Histórico de Ocorrências    | Permitir a consulta de ocorrências registradas anteriormente.                  |
-| Detalhe da Ocorrência       | Exibir informações completas de uma ocorrência específica.                     |
-| Registrar Ação Preventiva   | Simular o registro de uma ação tomada pela supervisora de segurança.           |
-| Colaboradores               | Listar colaboradores monitorados pelo sistema.                                 |
-| Detalhe do Colaborador      | Consultar dados do colaborador, EPIs obrigatórios e histórico recente.         |
-| Editar EPIs do Colaborador  | Simular a alteração dos EPIs vinculados a um colaborador.                      |
-| Gestão de EPIs              | Listar e gerenciar EPIs obrigatórios por área ou função.                       |
-| Relatórios de Conformidade  | Exibir indicadores, gráficos e filtros por setor e período.                    |
-| Relatório Detalhado         | Simular o relatório gerado para um setor específico.                           |
-| Câmeras e Áreas Monitoradas | Exibir câmeras, setores monitorados, status e EPIs obrigatórios por área.      |
+Na Sprint 3, o foco foi transitar de um protótipo com regras estáticas e visão pontual para uma experiência operacional completa no contexto da Metaindústria. O protótipo passou a contemplar o fechamento do ciclo de segurança: **parametrização modular por área de risco**, **explicabilidade de inferência da IA (Explainable AI com bounding boxes)** e **auditoria e despacho formal de medidas corretivas/preventivas**.
 
 ---
 
-## 3. Fluxos Navegáveis Principais
+## 2. Mapa de Telas (Atualizado - Sprint 3)
 
-A Sprint 2 solicitou que o protótipo cobrisse três fluxos principais. Esses fluxos foram representados no Figma da seguinte forma:
-
-### 3.1 Cadastro e Consulta de EPI por Colaborador
-
-Fluxo:
-
-1. Login
-2. Dashboard
-3. Colaboradores
-4. Detalhe do Colaborador — Carlos Henrique
-5. Editar EPIs
-6. Salvar alterações
-7. Retorno ao detalhe do colaborador com mensagem de sucesso
-
-Esse fluxo representa a consulta dos EPIs obrigatórios associados ao colaborador e a simulação da edição desses vínculos. No protótipo, o colaborador Carlos Henrique foi utilizado como exemplo principal, pois também está relacionado ao alerta de ausência de capacete.
-
-A tela de detalhe mostra os EPIs obrigatórios, o status de conformidade e o histórico recente de ocorrências. A tela/modal de edição permite visualizar os EPIs vinculados ao colaborador e simular uma atualização.
-
-### 3.2 Emissão e Visualização de Alerta de Risco
-
-Fluxo:
-
-1. Dashboard
-2. Monitoramento em Tempo Real
-3. Ver Alerta Preventivo
-4. Detalhe da Ocorrência
-5. Registrar Ação Preventiva
-6. Salvar ação
-7. Ocorrência resolvida com sucesso
-
-Esse fluxo foi baseado diretamente no Diagrama de Atividades da Sprint 1. A tela de monitoramento simula a captura de imagem por câmera, a detecção do colaborador Carlos Henrique e a identificação da ausência do capacete de segurança.
-
-Como a Sprint 2 exige apenas um protótipo navegável, a área da câmera foi representada por um frame simulado. O objetivo é demonstrar a experiência de uso e a lógica do fluxo, sem implementar o processamento real de visão computacional.
-
-A ocorrência gerada exibe data, horário, setor, tipo de irregularidade, criticidade, EPIs obrigatórios e EPIs detectados. Em seguida, a supervisora Mariana Oliveira registra uma ação preventiva, encerrando a ocorrência.
-
-### 3.3 Geração de Relatório de Conformidade por Setor
-
-Fluxo:
-
-1. Dashboard
-2. Relatórios de Conformidade
-3. Gerar Relatório
-4. Relatório Detalhado — Produção
-5. Visualização de indicadores e recomendações preventivas
-
-Esse fluxo representa a necessidade do gestor industrial de consultar indicadores consolidados sobre segurança e conformidade. A tela de relatórios apresenta filtros por setor e período, além de gráficos, indicadores e resumo por setor.
-
-O relatório detalhado mostra dados do setor de Produção, como taxa de conformidade, total de alertas, total de ocorrências, colaboradores monitorados, análise por EPI, ocorrências do período e recomendações preventivas.
-
-O botão de exportação em PDF foi representado visualmente como uma ação prevista para uma versão funcional do sistema. Nesta Sprint, a ação é simulada no protótipo, pois o foco está na navegação e validação da experiência.
+| Tela / Componente | Objetivo | Status na Sprint 3 |
+|---|---|---|
+| Login | Acesso simulado com autenticação por perfil (Supervisor, Gestor, Administrador). | Mantido da Sprint 2 |
+| Dashboard de Monitoramento | Visão consolidada de indicadores de segurança, alertas ativos e conformidade em tempo real. | Refinado |
+| Monitoramento em Tempo Real | Simulação de stream de vídeo com identificação de colaboradores e ausência de EPIs. | Mantido da Sprint 2 |
+| Alertas e Notificações | Central de alertas disparados pela visão computacional. | Refinado |
+| Histórico de Ocorrências | Consulta e filtragem avançada de eventos registrados. | Mantido da Sprint 2 |
+| **Parametrização de EPIs por Área/Câmera** | **Configuração dinâmica da matriz de EPIs obrigatórios por setor fabril e vínculo com fluxos RTSP de câmeras.** | **Nova Tela (Sprint 3)** |
+| **Auditoria e Triagem da Ocorrência** | **Visualização do frame de evidência estático com bounding boxes, scores de acurácia da IA e validação de incidentes.** | **Nova Tela (Sprint 3)** |
+| **Despacho de Ação Preventiva** | **Formulário de encaminhamento operacional, orientações ao colaborador e contestação de falsos positivos.** | **Nova Tela (Sprint 3)** |
+| Colaboradores & Detalhe | Gestão cadastral e consulta de dados funcionais. | Mantido da Sprint 2 |
+| Relatórios de Conformidade | Dashboard analítico com taxas de adesão à NR-1 por período e setor. | Mantido da Sprint 2 |
+| Relatório Detalhado | Laudo consolidado com gráficos e recomendações para exportação. | Mantido da Sprint 2 |
 
 ---
 
-## 4. Decisões de UX/UI
+## 3. Novos Fluxos Navegáveis e Justificativas de UX (Sprint 3)
 
-### 4.1 Hierarquia de Informação
+Em conformidade com as diretrizes da Sprint 3, foram implementados ao menos **dois novos fluxos secundários** para cobrir lacunas operacionais identificadas nos feedbacks da entrega anterior:
 
-A interface foi organizada para priorizar informações críticas de segurança. Por isso, o Dashboard apresenta logo no início os principais indicadores:
-
-* alertas ativos;
-* ocorrências do dia;
-* taxa de conformidade;
-* áreas monitoradas.
-
-Essa organização facilita a leitura rápida por parte da supervisora de segurança, que precisa tomar decisões preventivas em pouco tempo.
-
-### 4.2 Uso de Cores
-
-A paleta visual foi pensada para o contexto de segurança industrial:
-
-* azul escuro: identidade principal do sistema e sensação de confiança;
-* branco e cinza claro: fundos neutros para facilitar a leitura;
-* verde: conformidade, câmera online e ocorrência resolvida;
-* amarelo/laranja: atenção ou risco médio;
-* vermelho: alerta crítico, EPI ausente e risco alto.
-
-Essa escolha permite que o usuário identifique rapidamente a gravidade de cada situação.
-
-### 4.3 Componentes Reutilizáveis
-
-O protótipo utiliza componentes semelhantes entre as telas para manter consistência visual:
-
-* menu lateral;
-* cabeçalho;
-* cards de indicadores;
-* tabelas;
-* filtros;
-* botões;
-* badges de status;
-* modais;
-* listas de EPIs;
-* cards de câmeras e setores.
-
-Essa padronização melhora a navegação e facilita a compreensão do sistema.
-
-### 4.4 Navegação
-
-A navegação foi estruturada com menu lateral fixo, permitindo acesso rápido às principais áreas do sistema:
-
-* Dashboard;
-* Monitoramento;
-* Alertas;
-* Ocorrências;
-* Colaboradores;
-* EPIs;
-* Relatórios;
-* Câmeras e Áreas;
-* Configurações.
-
-Além disso, foram utilizados breadcrumbs para indicar o caminho da tela atual, como “PrevIA > Colaboradores > Detalhe do Colaborador” e “PrevIA > Ocorrências > Detalhe da Ocorrência”.
+### 3.1 Novo Fluxo 1: Parametrização Dinâmica de Regras de EPI por Setor e Câmera (UC12 e UC13)
+* **Caminho de Navegação:**  
+  `Dashboard → Configurações → Câmeras e Áreas → Selecionar Área (ex.: Estamparia) → Parametrizar EPIs Obrigatórios → Salvar Regras`
+* **Descrição da Interface:**  
+  O Administrador do sistema visualiza as áreas da fábrica e as câmeras IP/RTSP associadas. Ao editar uma área, abre-se a matriz de seleção de EPIs (Capacete, Protetor Auricular, Óculos de Proteção, Luvas de Raspa, Botina com Biqueira e Máscara Respiratória). O sistema permite delimitar zonas de risco específicas dentro do enquadramento visual da câmera (*geofencing*).
+* **Justificativa de UX e Negócio:**  
+  > *Na Sprint anterior, as regras de segurança eram aplicadas de maneira homogênea por colaborador ou de forma global para a fábrica. Em ambientes reais da Metaindústria, cada setor possui riscos distintos (ex.: o setor de pintura exige proteção respiratória, enquanto a estamparia demanda protetor auricular e botina reforçada). Essa evolução de usabilidade elimina falsos positivos em áreas que não exigem certos EPIs, previne a fadiga de alertas por parte dos supervisores e confere flexibilidade operacional.*
 
 ---
 
-## 5. Relação com as Personas
-
-### Carlos Henrique — Operador de Chão de Fábrica
-
-Carlos aparece como colaborador monitorado pelo sistema. Seu perfil foi usado no fluxo de alerta de risco, em que o sistema detecta ausência de capacete no setor de Produção.
-
-### Mariana Oliveira — Supervisora de Segurança
-
-Mariana é a principal usuária operacional do sistema. Ela acompanha o dashboard, visualiza alertas, consulta ocorrências e registra ações preventivas.
-
-### Roberto Almeida — Gestor Industrial
-
-Roberto está relacionado principalmente ao fluxo de relatórios. O painel de conformidade e o relatório detalhado ajudam na análise de indicadores e apoio à tomada de decisão.
-
-### Fernanda Lima — Administradora do Sistema
-
-Fernanda está relacionada às telas de gestão, como cadastro de EPIs, colaboradores, câmeras e áreas monitoradas. Essas telas representam as funções administrativas previstas na Sprint 1.
+### 3.2 Novo Fluxo 2: Auditoria de Imagem com Bounding Box e Despacho de Ação (UC07, UC09 e UC10)
+* **Caminho de Navegação:**  
+  `Dashboard → Alertas Recentes → Ver Detalhe da Ocorrência → Painel de Validação da IA → Registrar Conduta Preventiva → Concluir e Atualizar Status`
+* **Descrição da Interface:**  
+  Ao clicar em um alerta preventivo, o Supervisor visualiza o frame de evidência estático capturado no momento da infração. A interface desenha *bounding boxes* (caixas delimitadoras) coloridas sobre a imagem destacando a não conformidade (ex.: retângulo vermelho indicando *"Ausência de Capacete — Confiança 94%"*).  
+  A tela oferece botões rápidos de validação (*Confirmar Risco*, *Falso Positivo* ou *Risco Mitigado*) e um modal para registro formal da ação preventiva adotada (ex.: substituição de EPI quebrado, diálogo de segurança ou interrupção de equipamento).
+* **Justificativa de UX e Negócio:**  
+  > *O protótipo da Sprint 2 encerrava a interação na mera exibição do alerta na tela, gerando um vácuo no fluxo operacional. Esse novo fluxo atende às exigências normativas da NR-1 (Gerenciamento de Riscos Ocupacionais), permitindo que a detecção do modelo de Visão Computacional se converta em ação prática, rastreável e auditável. Além disso, a explicabilidade visual (XAI) do bounding box aumenta a confiança do supervisor no sistema.*
 
 ---
 
-## 6. Mapeamento entre Telas e Casos de Uso da Sprint 1
+## 4. Refinamentos de UX/UI Adotados na Sprint 3
 
-| Caso de Uso                               | Tela relacionada no protótipo                        |
-| ----------------------------------------- | ---------------------------------------------------- |
-| UC01 — Monitorar ambiente industrial      | Monitoramento em Tempo Real                          |
-| UC02 — Detectar colaborador               | Monitoramento em Tempo Real                          |
-| UC03 — Verificar uso de EPIs              | Monitoramento em Tempo Real / Detalhe do Colaborador |
-| UC04 — Identificar ausência de EPI        | Monitoramento / Detalhe da Ocorrência                |
-| UC05 — Detectar situação de risco         | Alertas / Ocorrências                                |
-| UC06 — Emitir alerta preventivo           | Alertas e Notificações / Detalhe da Ocorrência       |
-| UC07 — Registrar ocorrência               | Detalhe da Ocorrência / Histórico de Ocorrências     |
-| UC08 — Consultar dashboard                | Dashboard de Monitoramento                           |
-| UC09 — Consultar histórico de ocorrências | Histórico de Ocorrências                             |
-| UC10 — Gerar relatório de segurança       | Relatórios / Relatório Detalhado                     |
-| UC11 — Cadastrar colaboradores            | Colaboradores                                        |
-| UC12 — Cadastrar EPIs obrigatórios        | Gestão de EPIs / Editar EPIs do Colaborador          |
-| UC13 — Configurar câmeras                 | Câmeras e Áreas Monitoradas                          |
+### 4.1 Explicabilidade da Inteligência Artificial (Explainable AI - XAI)
+* **Feedback Incorporado:** O usuário necessita compreender o motivo exato pelo qual a inteligência artificial acionou uma notificação crítica.
+* **Solução de Interface:** Exibição da métrica de acurácia da inferência (ex.: *Acurácia: 94%*) e caixas delimitadoras coloridas em volta das áreas corporais do trabalhador na foto da ocorrência.
+
+### 4.2 Prevenção de Fadiga de Alertas e Redução de Atrito
+* Adoção de triagem visual categorizada por cores de criticidade (Crítico, Alto, Médio e Atenção) e disponibilização de botão de descarte rápido caso o supervisor identifique uma oclusão ou falso positivo, alimentando a base para re-treinamento do modelo.
+
+### 4.3 Design System e Consistência
+* Criação de novos componentes reutilizáveis no Figma:
+  * Componente de *Bounding Box* visual;
+  * Modal padronizado de *Despacho de Ordem/Ação Preventiva*;
+  * Seletor em formato de *Chips* / *Tags* para inclusão/exclusão dinâmica de EPIs obrigatórios.
 
 ---
 
-## 7. Relação com o Diagrama de Atividades
+## 5. Mapeamento Atualizado entre Telas e Casos de Uso (Sprint 3)
 
-O fluxo de emissão de alerta preventivo foi representado no protótipo seguindo a lógica do Diagrama de Atividades da Sprint 1:
-
-1. câmera captura imagem ou vídeo;
-2. sistema processa a imagem;
-3. colaborador é identificado;
-4. EPIs obrigatórios são verificados;
-5. ausência de EPI é detectada;
-6. alerta preventivo é gerado;
-7. ocorrência é registrada;
-8. alerta aparece para a supervisora;
-9. supervisora analisa a ocorrência;
-10. ação preventiva é registrada;
-11. ocorrência é encerrada.
-
-No protótipo, esse fluxo é representado com o caso do colaborador Carlos Henrique, identificado sem capacete no setor de Produção.
-
----
-
-## 8. Relação com o Diagrama de Classes
-
-As telas do protótipo também refletem as principais classes definidas na Sprint 1:
-
-| Classe                | Representação no protótipo                                |
-| --------------------- | --------------------------------------------------------- |
-| Usuario               | Perfis de acesso no login                                 |
-| Supervisor            | Mariana Oliveira, responsável pela análise de alertas     |
-| Gestor                | Perfil relacionado à consulta de relatórios               |
-| Administrador         | Perfil relacionado à gestão de cadastros e configurações  |
-| Colaborador           | Tela de colaboradores e detalhe do Carlos Henrique        |
-| AreaMonitorada        | Setores como Produção, Soldagem, Almoxarifado e Expedição |
-| Camera                | Tela de Câmeras e Áreas Monitoradas                       |
-| EPI                   | Gestão de EPIs e EPIs obrigatórios por colaborador        |
-| RegistroMonitoramento | Registro do monitoramento em tempo real                   |
-| Ocorrencia            | Histórico e detalhe da ocorrência                         |
-| Alerta                | Tela de alertas e notificações                            |
-| Relatorio             | Relatórios de conformidade e relatório detalhado          |
-| Dashboard             | Dashboard de monitoramento                                |
-| SistemaIA             | Representado pela detecção simulada no monitoramento      |
+| Caso de Uso | Tela Relacionada no Protótipo | Status de Cobertura |
+|---|---|---|
+| UC01 — Monitorar ambiente industrial | Monitoramento em Tempo Real | Coberto na Sprint 2 |
+| UC02 — Detectar colaborador | Monitoramento em Tempo Real | Coberto na Sprint 2 |
+| UC03 — Verificar uso de EPIs | Monitoramento / Detalhe do Colaborador | Coberto na Sprint 2 |
+| UC04 — Identificar ausência de EPI | Monitoramento / Auditoria da Ocorrência | Refinado na Sprint 3 |
+| UC05 — Detectar situação de risco | Alertas / Ocorrências | Refinado na Sprint 3 |
+| UC06 — Emitir alerta preventivo | Alertas e Notificações | Coberto na Sprint 2 |
+| UC07 — Registrar ocorrência | Auditoria da Ocorrência / Histórico | Refinado na Sprint 3 |
+| UC08 — Consultar dashboard | Dashboard de Monitoramento | Refinado na Sprint 3 |
+| UC09 — Consultar histórico de ocorrências | Histórico de Ocorrências | Refinado na Sprint 3 |
+| UC10 — Gerar relatório de segurança | Relatórios / Relatório Detalhado | Coberto na Sprint 2 |
+| UC11 — Cadastrar colaboradores | Colaboradores | Coberto na Sprint 2 |
+| **UC12 — Cadastrar EPIs obrigatórios** | **Parametrização de EPIs por Área/Câmera** | **Evoluído na Sprint 3** |
+| **UC13 — Configurar câmeras** | **Parametrização de EPIs por Área/Câmera** | **Evoluído na Sprint 3** |
 
 ---
 
-## 9. Limitações do Protótipo
+## 6. Relação com o Modelo Lógico (Diagrama de Classes Refinado)
 
-O protótipo desenvolvido na Sprint 2 não possui implementação em código, banco de dados ou processamento real de imagens. As interações são simuladas para representar a experiência esperada do usuário.
+As telas e fluxos adicionados na Sprint 3 possuem correspondência direta com as entidades atualizadas no Diagrama de Classes:
 
-Algumas ações, como exportar PDF ou atualizar dados após edição, foram representadas visualmente por telas, botões e mensagens de sucesso. Essas ações demonstram o comportamento previsto para uma versão funcional futura do sistema.
-
-Essa abordagem está alinhada à proposta da Sprint 2, que solicita um protótipo navegável e fiel o suficiente para simular a experiência real do usuário.
+* **`AreaMonitorada` e `Camera`:** A tela de parametrização implementa visualmente os métodos `definirEPIsObrigatorios()` e a associação direta entre a área e a lista de câmeras RTSP.
+* **`Ocorrencia`:** A tela de auditoria reflete os novos atributos de banco de dados modelados:
+  * `statusValidacao` (Pendente, Confirmado, Falso Positivo, Mitigado);
+  * `urlFrameEvidencia` (imagem capturada pela IA com marcações);
+  * `acaoTomada` (medida preventiva digitada e arquivada pelo supervisor).
 
 ---
 
-## 10. Conclusão
+## 7. Conclusão
 
-O protótipo do PrevIA foi desenvolvido para representar uma solução de segurança industrial proativa, mantendo coerência com a modelagem da Sprint 1.
-
-As telas e fluxos criados permitem demonstrar os principais objetivos do sistema: monitorar colaboradores, verificar EPIs, identificar riscos, emitir alertas preventivos, registrar ocorrências, apoiar ações da supervisão e gerar relatórios de conformidade por setor.
-
-Dessa forma, o protótipo atende aos requisitos da Sprint 2 e funciona como artefato de comunicação técnica e de negócio para apresentação da solução a stakeholders industriais.
+A evolução do protótipo na Sprint 3 permitiu validar cenários operacionais complexos, eliminando limitações da versão anterior. A integração de fluxos de configuração modular e auditoria detalhada de evidências consolidou o PrevIA como uma solução madura, intuitiva e plenamente alinhada às necessidades da indústria 4.0.
